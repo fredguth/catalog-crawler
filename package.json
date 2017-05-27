@@ -1,0 +1,12 @@
+{
+  "name": "catalog-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
