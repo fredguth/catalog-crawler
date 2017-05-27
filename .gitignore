@@ -1,1 +1,9 @@
 .DS_Store
+avon/*
+boticario/*
+eudora/*
+herbalife/*
+jequiti/*
+rahda/*
+node_modules/
+npm-debug.log
