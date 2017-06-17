@@ -24,7 +24,7 @@ var download = function(url, filename, accept, reject, job, item) {
           reject(job, item)
         }
 
-      });  // close() is async, call cb after close completes.
+      });
     });
   }).on('error', function(err) { // Handle errors
     fs.unlink(filename); // Delete the file async. (But we don't check the result)
@@ -51,6 +51,8 @@ var reject = function (job, item) {
   //do nothing
 }
 
+var getNatura = require ("./natura.js");
+
 var filename, filepath, url;
 
 for (var brand in jobs) {
@@ -58,7 +60,13 @@ for (var brand in jobs) {
     if (!jobs.hasOwnProperty(brand)) continue;
 
     var job = jobs[brand];
+    if (brand=="natura") {
+      getNatura(job);
+      continue;
+    }
+
     job.next.forEach(function(item) {
+
       filename = job.file_template.replace('::::><::::', item);
       if (job.path_template) {
         filepath = job.path_template.replace('::::><::::', item)+filename;

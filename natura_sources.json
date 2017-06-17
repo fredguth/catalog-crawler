@@ -1,0 +1,142 @@
+{
+  "spc": {
+    "name": "São Paulo Capital",
+    "tid": "4441",
+    "nid": "16471"
+  },
+  "spi": {
+    "name": "São Paulo Interior",
+    "tid": "4841",
+    "nid": "16471"
+  },
+  "es": {
+    "name": "Espírito Santo",
+    "tid": "4881",
+    "nid": "16471"
+  },
+  "mg": {
+    "name": "Minas Gerais",
+    "tid": "5006",
+    "nid": "16471"
+  },
+  "rj": {
+    "name": "Rio de Janeiro",
+    "tid": "5036",
+    "nid": "16471"
+  },
+  "ac": {
+    "name": "Acre",
+    "tid": "4846",
+    "nid": "16466"
+  },
+  "ap": {
+    "name": "Amapá",
+    "tid": "4856",
+    "nid": "16466"
+  },
+  "am": {
+    "name": "Amazonas",
+    "tid": "4861",
+    "nid": "16466"
+  },
+  "pa": {
+    "name": "Pará",
+    "tid": "5011",
+    "nid": "16466"
+  },
+  "ro": {
+    "name": "Rondônia",
+    "tid": "5051",
+    "nid": "16466"
+  },
+  "rr": {
+    "name": "Roraima",
+    "tid": "5056",
+    "nid": "16466"
+  },
+  "to": {
+    "name": "Tocantins",
+    "tid": "5071",
+    "nid": "16466"
+  },
+  "al": {
+    "name": "Alagoas",
+    "tid": "4851",
+    "nid": "16466"
+  },
+  "ba": {
+    "name": "Bahia",
+    "tid": "4866",
+    "nid": "16466"
+  },
+  "ce": {
+    "name": "Ceará",
+    "tid": "4871",
+    "nid": "16466"
+  },
+  "ma": {
+    "name": "Maranhao",
+    "tid": "4891",
+    "nid": "16466"
+  },
+  "pb": {
+    "name": "Paraíba",
+    "tid": "5016",
+    "nid": "16466"
+  },
+  "pe": {
+    "name": "Pernambuco",
+    "tid": "5026",
+    "nid": "16466"
+  },
+  "pi": {
+    "name": "Piauí",
+    "tid": "5031",
+    "nid": "16466"
+  },
+  "rn": {
+    "name": "Rio Grande do Norte",
+    "tid": "5041",
+    "nid": "16466"
+  },
+  "se": {
+    "name": "Sergipe",
+    "tid": "5066",
+    "nid": "16466"
+  },
+  "df": {
+    "name": "Distrito Federal",
+    "tid": "4876",
+    "nid": "16471"
+  },
+  "go": {
+    "name": "Goiás",
+    "tid": "4886",
+    "nid": "16471"
+  },
+  "mt": {
+    "name": "Mato Grosso",
+    "tid": "4896",
+    "nid": "16471"
+  },
+  "ms": {
+    "name": "Mato Grosso do Sul",
+    "tid": "5001",
+    "nid": "16471"
+  },
+  "pr": {
+    "name": "Paraná",
+    "tid": "5021",
+    "nid": "16471"
+  },
+  "rs": {
+    "name": "Rio Grande do Sul",
+    "tid": "5046",
+    "nid": "16471"
+  },
+  "sc": {
+    "name": "Santa Catarina",
+    "tid": "5061",
+    "nid": "16471"
+  }
+}

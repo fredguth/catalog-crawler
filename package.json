@@ -2,7 +2,10 @@
   "name": "catalog-crawler",
   "version": "1.0.0",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node src/server.js"
