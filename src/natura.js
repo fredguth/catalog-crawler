@@ -6,64 +6,72 @@ const request = require('request-promise');
 
 module.exports = function(job) {
   var states = JSON.parse(fs.readFileSync('natura_sources.json', 'utf8'));
-  states = updateNids(states);
-  var cicles = updateCicles(states);
-  console.log(cicles);
+  Promise.resolve(states)
+    .then(updateNids)
+    .then(updateCicles)
+    .then(f)
 }
+var f = function (a) {
+  console.log(a);
+}
+
 var updateNids = function (states) {
-  var promises = [];
-  for (var uf in states) {
-    var state = states[uf];
-    var url = `http://www.natura.com.br/map/cicle-infos/${state.nid}/${state.tid}`;
+  return new Promise((resolve, reject)=>{
+    var promises = [];
+    for (var uf in states) {
+      var state = states[uf];
+      var url = `http://www.natura.com.br/map/cicle-infos/${state.nid}/${state.tid}`;
 
-    (function(uf) {
-      promises.push(request({url}, (err, response, body) => {
-        if(err) { console.log(err); return; }
-        var data = JSON.parse(body).data;
-        var nid = data.items[data.items.length-1].nid;
-        states[uf]["nid"]=nid;
-      }));
-    })(uf);
-  }
-  Promise.all(promises).then(()=>{
-    var content = JSON.stringify(states, null, 2);
-    fs.writeFile("natura_sources.json", content, 'utf8', function (err) {
-        if (err) {
-            return console.log(err);
-        }
+      (function(uf) {
+        promises.push(request({url}, (err, response, body) => {
+          if(err) { console.log(err); return; }
+          var data = JSON.parse(body).data;
+          var nid = data.items[data.items.length-1].nid;
+          states[uf]["nid"]=nid;
+        }));
+      })(uf);
+    }
+    Promise.all(promises).then(()=>{
+      var content = JSON.stringify(states, null, 2);
+      fs.writeFile("natura_sources.json", content, 'utf8', function (err) {
+          if (err) {
+              reject(err);
+          }
+      });
+      resolve(states);
     });
-    return content;
-  })
-
+  });
 }
 var updateCicles = function (states) {
-  var promises = [];
   var cicles = {};
-  for (var uf in states) {
-    var state = states[uf];
-    var url = `http://www.natura.com.br/map/cicle-infos/${state.nid}/${state.tid}`;
-    (function(uf) {
-      promises.push(request({url}, (err, response, body) => {
-        if(err) { console.log(err); return; }
-        var data = JSON.parse(body).data;
-        for (var item in data.items) {
-          console.log('cicles:', cicles);
-          var states = cicles[item.cicle][item.nid].states||[];
-          states = states.push(uf);
-          console.log('states:', states);
-          cicles[item.cicle][item.nid] = {
-            pdf: item.pdf,
-            states
+  return new Promise((resolve, reject)=>{
+    var promises = [];
+    for (var uf in states) {
+      var state = states[uf];
+      var url = `http://www.natura.com.br/map/cicle-infos/${state.nid}/${state.tid}`;
+     (function(uf) {
+        promises.push(request({url}, (err, response, body) => {
+          if(err) { console.log(err); return; }
+          var data = JSON.parse(body).data;
+          for (var i=0; i < data.items.length; i++) {
+            var item = data.items[i];
+            cicles[item.cicle]= cicles[item.cicle]||{};
+            cicles[item.cicle][item.nid]=cicles[item.cicle][item.nid]||{};
+            cicles[item.cicle][item.nid].pdf = item.pdf;
+            cicles[item.cicle][item.nid].states = cicles[item.cicle][item.nid].states||[];
+            if (cicles[item.cicle][item.nid].states.indexOf(uf) < 0) {
+              cicles[item.cicle][item.nid].states.push(uf);
+            }
           }
-          console.log('cicles:', cicles);
-        }
-      }));
-    })(uf);
-  }
-  Promise.all(promises).then(()=>{
-    return cicles;
-  })
+        }));
+      })(uf);
+    }
+    Promise.all(promises).then(()=>{
+      resolve(JSON.stringify(cicles, null, 2));
+    });
+  });
 }
+
 // "2017-05":{
 //   "14496": {
 //     pdf: "",
