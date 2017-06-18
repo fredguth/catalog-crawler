@@ -1,6 +1,7 @@
 {
   "natura": {
-    "last": []
+    "last": [
+    ]
   },
   "eudora": {
     "next": [
@@ -99,7 +100,7 @@
     "url_template": "http://www.jequiti.com.br/colheita-virtual/Colheita_::::><::::/",
     "file_template": "PAGES_CICLO::::><::::_COLHEITA_BX.zip"
   },
-  "boticario": {
+    "boticario": {
     "next": [
       "Ciclo_BR",
       "Ciclo_NE"

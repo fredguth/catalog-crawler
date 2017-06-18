@@ -8,9 +8,11 @@ module.exports = function(job) {
   Promise.resolve(states)
     .then(updateNids)
     .then(updateCicles)
-    .then(downloadNids)
+    .then(downloadRevistas)
 }
-
+var f = function (a) {
+  console.log(JSON.stringify(a, null, 2));
+}
 var updateNids = function (states) {
   return new Promise((resolve, reject)=>{
     var promises = [];
@@ -52,12 +54,13 @@ var updateCicles = function (states) {
           for (var i=0; i < data.items.length; i++) {
             var item = data.items[i];
             cicles[item.cicle]= cicles[item.cicle]||{};
-            cicles[item.cicle][item.nid]=cicles[item.cicle][item.nid]||{};
-            cicles[item.cicle][item.nid].pdf = item.pdf;
-            cicles[item.cicle][item.nid].states = cicles[item.cicle][item.nid].states||[];
-            if (cicles[item.cicle][item.nid].states.indexOf(uf) < 0) {
-              cicles[item.cicle][item.nid].states.push(uf);
-            }
+            cicles[item.cicle][item.url]=cicles[item.cicle][item.url]||{};
+            cicles[item.cicle][item.url].pdf = item.pdf;
+            cicles[item.cicle][item.url].url = item.url;
+            // cicles[item.cicle][item.url].states = cicles[item.cicle][item.url].states||[];
+            // if (cicles[item.cicle][item.url].states.indexOf(uf) < 0) {
+            //   cicles[item.cicle][item.url].states.push(uf);
+            // }
           }
         }));
       })(uf);
@@ -68,30 +71,30 @@ var updateCicles = function (states) {
   });
 }
 
-var downloadNids = function (cicles) {
-  var accept = function (cicle, ufs) {
+var downloadRevistas = function (cicles) {
+  var accept = function (cicle, path) {
     var jobs = JSON.parse(fs.readFileSync('jobs.json', 'utf8'));
-    var index = jobs["natura"].last.indexOf(`${cicle}___${ufs}`);
+    var index = jobs["natura"].last.indexOf(`${path}`);
     if (index < 0) {
-      jobs["natura"].last.push(`${cicle}___${ufs}`);
-    const content = JSON.stringify(jobs, null, 2);
-    fs.writeFile("jobs.json", content, 'utf8', function (err) {
-        if (err) {
-            return console.log(err);
-        }
-    });
+      jobs["natura"].last.push(`${path}`);
+      const content = JSON.stringify(jobs, null, 2);
+      fs.writeFile("jobs.json", content, 'utf8', function (err) {
+          if (err) {
+              return console.log(err);
+          }
+      });
     }
   }
 
   for (var cicle in cicles) {
-    for (var nid in cicles[cicle]) {
+    for (var item in cicles[cicle]) {
 
-      //console.log(JSON.stringify(cicles[cicle][nid], null, 2));
-      var ufs = cicles[cicle][nid].states.sort().join('-').toUpperCase();
-      var name = cicles[cicle][nid].pdf.substring(cicles[cicle][nid].pdf.lastIndexOf('/')+1);
-      filepath = `./natura/${cicle}___${ufs}___${name}`;
+      //console.log(JSON.stringify(cicles[cicle][item], null, 2));
+      //var ufs = cicles[cicle][item].states.sort().join('-').toUpperCase();
+      var name = cicles[cicle][item].pdf.substring(cicles[cicle][item].pdf.lastIndexOf('/')+1);
+      filepath = `./natura/${cicle}___${name}`;
       if (!fs.existsSync(filepath)) {
-        utils.download(cicles[cicle][nid].pdf , filepath, accept, console.error, cicle, ufs);
+        utils.download(cicles[cicle][item].pdf , filepath, accept, console.error, cicle, filepath);
       }
 
     }
