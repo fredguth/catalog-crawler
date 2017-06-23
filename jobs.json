@@ -1,6 +1,13 @@
 {
   "natura": {
     "last": [
+      "./natura/2017-08___pages_ciclo08-17_v4_bx.pdf",
+      "./natura/2017-05___revistaespaconatura_c05_spico.pdf",
+      "./natura/2017-07___revistaespaconatura_c07_17_spico.pdf",
+      "./natura/2017-06___revistaespaconatura-c06-17-ne.pdf",
+      "./natura/2017-08___pages_ciclo08-17_v2_bx.pdf",
+      "./natura/2017-07___revistaespaconatura_c07_17_spc.pdf",
+      "./natura/2017-05___revistaespaconatura_c05_spc.pdf"
     ]
   },
   "eudora": {
@@ -25,13 +32,15 @@
   },
   "avon": {
     "next": [
-      "13-2017",
       "14-2017",
       "15-2017",
       "16-2017",
       "17-2017",
       "18-2017",
-      "19-2017"
+      "19-2017",
+      "20-2017",
+      "21-2017",
+      "22-2017"
     ],
     "last": [
       "5-2017",
@@ -45,10 +54,56 @@
       "3-2017",
       "12-2017",
       "7-2017",
-      "1-2017"
+      "1-2017",
+      "13-2017"
     ],
     "url_template": "http://avonfolheto.com/Avon-Folheto-Cosmeticos-::::><::::/",
     "file_template": "Avon-Folheto-Cosmeticos-::::><::::.pdf"
+  },
+  "avon-moda-casa": {
+    "next": [
+      "14-2017",
+      "15-2017",
+      "16-2017",
+      "17-2017",
+      "18-2017",
+      "19-2017",
+      "5-2017",
+      "10-2017",
+      "8-2017",
+      "2-2017",
+      "4-2017",
+      "9-2017",
+      "6-2017",
+      "11-2017",
+      "3-2017",
+      "12-2017",
+      "7-2017",
+      "1-2017",
+      "13-2017"
+    ],
+    "last": [
+
+    ],
+    "url_template": "http://avonfolheto.com/Avon-Folheto-Moda-Casa-::::><::::/",
+    "file_template": "Avon-Moda-Casa-::::><::::.pdf"
+  },
+  "avon-korres": {
+    "next": [
+      "10-11-2017",
+      "12-13-2017",
+      "14-15-2017",
+      "16-17-2017",
+      "18-19-2017",
+      "20-21-2017",
+      "22-23-2017",
+      "24-25-2017"
+    ],
+    "last": [
+
+    ],
+    "url_template": "http://avonfolheto.com/Avon-Korres-::::><::::/",
+    "file_template": "Avon-Korres-::::><::::.pdf"
   },
   "rahda": {
     "next": [
@@ -100,7 +155,7 @@
     "url_template": "http://www.jequiti.com.br/colheita-virtual/Colheita_::::><::::/",
     "file_template": "PAGES_CICLO::::><::::_COLHEITA_BX.zip"
   },
-    "boticario": {
+  "boticario": {
     "next": [
       "Ciclo_BR",
       "Ciclo_NE"
