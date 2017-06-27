@@ -82,16 +82,12 @@
       "1-2017",
       "13-2017"
     ],
-    "last": [
-
-    ],
+    "last": [],
     "url_template": "http://avonfolheto.com/Avon-Folheto-Moda-Casa-::::><::::/",
     "file_template": "Avon-Moda-Casa-::::><::::.pdf"
   },
   "avon-korres": {
     "next": [
-      "10-11-2017",
-      "12-13-2017",
       "14-15-2017",
       "16-17-2017",
       "18-19-2017",
@@ -100,7 +96,8 @@
       "24-25-2017"
     ],
     "last": [
-
+      "12-13-2017",
+      "10-11-2017"
     ],
     "url_template": "http://avonfolheto.com/Avon-Korres-::::><::::/",
     "file_template": "Avon-Korres-::::><::::.pdf"
