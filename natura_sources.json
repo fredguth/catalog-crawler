@@ -12,7 +12,7 @@
   "es": {
     "name": "Espírito Santo",
     "tid": "4881",
-    "nid": "16471"
+    "nid": "16816"
   },
   "mg": {
     "name": "Minas Gerais",
@@ -52,17 +52,17 @@
   "rr": {
     "name": "Roraima",
     "tid": "5056",
-    "nid": "16466"
+    "nid": "16811"
   },
   "to": {
     "name": "Tocantins",
     "tid": "5071",
-    "nid": "16466"
+    "nid": "16811"
   },
   "al": {
     "name": "Alagoas",
     "tid": "4851",
-    "nid": "16466"
+    "nid": "16811"
   },
   "ba": {
     "name": "Bahia",
@@ -72,12 +72,12 @@
   "ce": {
     "name": "Ceará",
     "tid": "4871",
-    "nid": "16466"
+    "nid": "16811"
   },
   "ma": {
     "name": "Maranhao",
     "tid": "4891",
-    "nid": "16466"
+    "nid": "16811"
   },
   "pb": {
     "name": "Paraíba",
@@ -87,17 +87,17 @@
   "pe": {
     "name": "Pernambuco",
     "tid": "5026",
-    "nid": "16466"
+    "nid": "16811"
   },
   "pi": {
     "name": "Piauí",
     "tid": "5031",
-    "nid": "16466"
+    "nid": "16811"
   },
   "rn": {
     "name": "Rio Grande do Norte",
     "tid": "5041",
-    "nid": "16466"
+    "nid": "16811"
   },
   "se": {
     "name": "Sergipe",
@@ -107,22 +107,22 @@
   "df": {
     "name": "Distrito Federal",
     "tid": "4876",
-    "nid": "16471"
+    "nid": "16811"
   },
   "go": {
     "name": "Goiás",
     "tid": "4886",
-    "nid": "16471"
+    "nid": "16816"
   },
   "mt": {
     "name": "Mato Grosso",
     "tid": "4896",
-    "nid": "16471"
+    "nid": "16811"
   },
   "ms": {
     "name": "Mato Grosso do Sul",
     "tid": "5001",
-    "nid": "16471"
+    "nid": "16811"
   },
   "pr": {
     "name": "Paraná",
@@ -132,11 +132,11 @@
   "rs": {
     "name": "Rio Grande do Sul",
     "tid": "5046",
-    "nid": "16471"
+    "nid": "16816"
   },
   "sc": {
     "name": "Santa Catarina",
     "tid": "5061",
-    "nid": "16471"
+    "nid": "16816"
   }
 }
